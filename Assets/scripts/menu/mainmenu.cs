@@ -18,4 +18,10 @@ public class mainmenu : MonoBehaviour
     {
         SceneManager.LoadScene("htp");
     }
+
+    public void Quit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 }

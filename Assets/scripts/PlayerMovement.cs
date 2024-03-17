@@ -1,17 +1,37 @@
 
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
-{
+{  
     [SerializeField] private float speed;
+    [SerializeField] private float delay;
     private Rigidbody2D body;
     private Animator anim;
+    private static IEnumerator WaitForSceneLoad()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("end");
+    }
 
     bool pluszak = false;
     bool koszula = false;
-    bool herbata = true;
+    bool herbata = false;
     bool sluchawki = false;
-    bool karma = true;
+    bool karma = false;
+
+    bool ojciec = false;
+    bool kot = false;
+    bool babcia = false;
+    bool siostra = false;
+    bool dziecko = false;
+
+    bool dojciec = false;
+    bool dkot = false;
+    bool dbabcia = false;
+    bool dsiostra = false;
+    bool ddziecko = false;
 
     private void Awake()
     {
@@ -37,13 +57,15 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(collision.name);
         if (collision.gameObject.tag == "npcbrat")
         {
-            if (Input.GetKey(KeyCode.E) && !pluszak)
+            if (Input.GetKey(KeyCode.E) && !pluszak && !ddziecko)
             {
                 collision.gameObject.GetComponent<npcbratController>().activatedialog();
+                ddziecko = true;
             }
-            else
+            else if (Input.GetKey(KeyCode.E) && pluszak)
             {
                 collision.GetComponent<Animator>().SetBool("hasPluszak", Input.GetKey(KeyCode.E));
+                dziecko = true;
             }
 
         }
@@ -52,21 +74,22 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-
                 pluszak = true;
+                collision.gameObject.GetComponent<obControllerpluszak>().activatedialog();
             }
         }
 
         else if (collision.gameObject.tag == "npcojciec")
         {
-            if (Input.GetKey(KeyCode.E) && !koszula)
+            if (Input.GetKey(KeyCode.E) && !koszula && !dojciec)
             {
                 collision.gameObject.GetComponent<npsojciecController>().activatedialog();
+                dojciec = true; 
             }
-            else
+            else if (Input.GetKey(KeyCode.E) && koszula)
             {
                 collision.GetComponent<Animator>().SetBool("haskoszula", Input.GetKey(KeyCode.E));
-                //anim.SetBool("haskoszula", true);
+                ojciec = true;
             }
 
         }
@@ -76,6 +99,8 @@ public class PlayerMovement : MonoBehaviour
             {
            
                 koszula = true;
+                Destroy(GameObject.FindWithTag("koszula"));
+                collision.gameObject.GetComponent<obControllerkoszula>().activatedialog();
             }
 
 
@@ -84,13 +109,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "npcsiostra")
         {
-            if (Input.GetKey(KeyCode.E) && !sluchawki)
+            if (Input.GetKey(KeyCode.E) && !sluchawki && !dsiostra)
             {
                 collision.gameObject.GetComponent<npcsiostraController>().activatedialog();
+                dsiostra = true;
             }
-            else
+            else if (Input.GetKey(KeyCode.E) && sluchawki)
             {
                 collision.GetComponent<Animator>().SetBool("hassluchawki", Input.GetKey(KeyCode.E));
+                siostra = true;
             }
 
         }
@@ -98,8 +125,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-
-                sluchawki = true;
+               
+               sluchawki = true;
+               Destroy(GameObject.FindWithTag("sluchawki"));
+                collision.gameObject.GetComponent<obControllersluchawki>().activatedialog();
             }
 
 
@@ -108,13 +137,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "npcbabcia")
         {
-            if (Input.GetKey(KeyCode.E) && !herbata)
+            if (Input.GetKey(KeyCode.E) && !herbata && !dbabcia)
             {
                 collision.gameObject.GetComponent<npcbabciaController>().activatedialog();
+                dbabcia = true;
             }
-            else
+            else if (Input.GetKey(KeyCode.E) && herbata)
             {
                 collision.GetComponent<Animator>().SetBool("hasherbata", Input.GetKey(KeyCode.E));
+                babcia = true;
             }
 
         }
@@ -124,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 herbata = true;
+                collision.gameObject.GetComponent<obControllerherbata>().activatedialog();
             }
 
 
@@ -132,13 +164,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "npckot")
         {
-            if (Input.GetKey(KeyCode.E) && !karma)
+            if (Input.GetKey(KeyCode.E) && !karma && !dkot)
             {
                 collision.gameObject.GetComponent<npckot>().activatedialog();
+                dkot = true;
             }
-            else
+            else if (Input.GetKey(KeyCode.E) && karma)
             {
                 collision.GetComponent<Animator>().SetBool("haskarma", Input.GetKey(KeyCode.E));
+                kot = true;
             }
 
         }
@@ -148,12 +182,22 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 karma = true;
+                collision.gameObject.GetComponent<obControllerkarma>().activatedialog();
             }
+
 
 
 
         }
 
 
+        if (siostra == true && babcia == true && kot == true && dziecko == true && ojciec == true)
+        {
+            StartCoroutine(WaitForSceneLoad());
+        }
+
     }
+
+  
+
 }

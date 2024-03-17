@@ -10,6 +10,8 @@ namespace DialogSystem
         [SerializeField] private string input;
         [SerializeField] private float delay;
 
+        [SerializeField] private AudioClip sound;
+
         [SerializeField] private Sprite characterSprite;
         [SerializeField] private Image imageHolder;
         private void Awake()
@@ -22,7 +24,7 @@ namespace DialogSystem
         }
         private void Start()
         {
-            StartCoroutine(WriteText(input, textHolder, delay));
+            StartCoroutine(WriteText(input, textHolder, delay, sound));
         }
     }
 }

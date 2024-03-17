@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/lvls/parter.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/lvls/end.unity
+    guid: 69fc3ed4e3a301644ad3ca114934f62e
+  - enabled: 1
     path: Assets/lvls/htp.unity
     guid: 2c8832a049db3ec47850d0c46758d102
   - enabled: 1
