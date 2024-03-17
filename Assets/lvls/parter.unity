@@ -5577,7 +5577,7 @@ GameObject:
   - component: {fileID: 829406681}
   m_Layer: 0
   m_Name: brat
-  m_TagString: npc
+  m_TagString: npcbrat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6394,7 +6394,7 @@ GameObject:
   - component: {fileID: 964868722}
   m_Layer: 0
   m_Name: babcia
-  m_TagString: npc
+  m_TagString: npcbabcia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6495,7 +6495,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 964868718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2471af7ad13d0e4e92a77b03138ff68, type: 3}
+  m_Script: {fileID: 11500000, guid: fd24827f1eb5bb841ad509e775fa4aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 1338520265}
@@ -9704,7 +9704,7 @@ GameObject:
   - component: {fileID: 1359425272}
   m_Layer: 0
   m_Name: siostra
-  m_TagString: npc
+  m_TagString: npcsiostra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9733,7 +9733,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1359425270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2471af7ad13d0e4e92a77b03138ff68, type: 3}
+  m_Script: {fileID: 11500000, guid: be6020f1152991e4399e0a8f9e5d42b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 776101161}
@@ -11121,10 +11121,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496004299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2471af7ad13d0e4e92a77b03138ff68, type: 3}
+  m_Script: {fileID: 11500000, guid: 3971d071f0be21f48bed3e7242bb6256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: {fileID: 1099516244}
+  dialog: {fileID: 487093987}
 --- !u!61 &1496004302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12076,7 +12076,7 @@ GameObject:
   - component: {fileID: 1706110068}
   m_Layer: 0
   m_Name: kot
-  m_TagString: npc
+  m_TagString: npckot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12105,7 +12105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1706110066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2471af7ad13d0e4e92a77b03138ff68, type: 3}
+  m_Script: {fileID: 11500000, guid: 18caedec3eb2b7c49b6207b687823549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 1963699220}

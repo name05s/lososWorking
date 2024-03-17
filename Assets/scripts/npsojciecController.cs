@@ -1,7 +1,8 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class npcbratController : MonoBehaviour
+public class npsojciecController : MonoBehaviour
 {
     [SerializeField] private GameObject dialog;
     public void activatedialog()

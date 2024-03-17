@@ -4,6 +4,7 @@ using System.Collections;
 
 namespace DialogSystem
 {
+
         public class dialogBase : MonoBehaviour
     {
         public bool finished { get; private set; }
