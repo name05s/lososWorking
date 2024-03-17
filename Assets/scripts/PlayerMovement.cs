@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
 
+    bool keyOne = false;
+
     private void Awake()
     {
         //grabbing references
@@ -31,9 +33,17 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "npc")
         {
             if (Input.GetKey(KeyCode.E))
-
+            {
                 collision.gameObject.GetComponent<npcController>().activatedialog();
-        }
+            }
 
+        }
+        else if(collision.tag == "keyOne" && !keyOne)
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                keyOne = true;
+            }
+        }
     }
 }
