@@ -9,6 +9,7 @@ public class grab : MonoBehaviour
 
     private void Update()
     {
+        //dupa
         RaycastHit2D grabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale, rayDist);
 
         if (grabCheck.collider != null && grabCheck.collider.tag == "object")
